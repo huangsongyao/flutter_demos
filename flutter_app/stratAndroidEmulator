@@ -1,0 +1,15 @@
+
+cd ~/Library/Android/sdk/tools/
+echo `./emulator -list-avds`
+
+read -p "请输入需要启动的Android模拟器:" emulator
+
+sumbol="@"
+./emulator ${sumbol}${emulator}
+
+echo `flutter devices`
+read -p "请输入模拟器的id号" emulatorId
+flutter run -d $emulatorId
+
+echo "completed!"
+exit 0
